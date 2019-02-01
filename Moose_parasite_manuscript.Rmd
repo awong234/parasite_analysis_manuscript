@@ -1,0 +1,33 @@
+---
+output: pdf_document
+---
+
+\vspace*{\stretch{1.0}}
+\begin{center}
+  \Large{\textbf{Evaluation of infection risk of two endoparasites to moose (Alces alces)}\\
+  \vspace{5mm}
+  \large{Alec Wong\textsuperscript{1,2}, Angela Fuller\textsuperscript{1,2,3}, J. Andrew Royle\textsuperscript{3}}\\
+  \vspace{5mm}
+  \normalsize{\textsuperscript{1}Cornell University}\\
+  \normalsize{\textsuperscript{2}New York Cooperative Fish and Wildlife Research Unit}\\
+  \normalsize{\textsuperscript{3}U.S. Geological Survey}\\
+  \vspace*{\fill}
+\end{center}
+
+\newpage
+
+# Introduction
+
+# Materials and Methods
+
+## Study area
+
+We surveyed within the Adirondack Park of the state of New York, an area of 24,000 $\text{km}^2$. 
+
+## Data
+
+## Statistical Model
+
+# Results
+
+# Discussion
