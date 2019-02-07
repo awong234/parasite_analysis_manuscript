@@ -1,12 +1,13 @@
 ---
 output: pdf_document
+bibliography: moose_parasites.bib
 ---
 
 \vspace*{\stretch{1.0}}
 \begin{center}
-  \Large{\textbf{Evaluation of infection risk of two endoparasites to moose (Alces alces)}\\
+  \Large{\textbf{Evaluation of infection risk of two endoparasites to moose (Alces alces) in the Adirondack Park of New York}}\\
   \vspace{5mm}
-  \large{Alec Wong\textsuperscript{1,2}, Angela Fuller\textsuperscript{1,2,3}, J. Andrew Royle\textsuperscript{3}}\\
+  \large{Alec Wong\textsuperscript{1}, Krysten Schuler\textsuperscript{1}, Angela Fuller\textsuperscript{1,2,3}}\\
   \vspace{5mm}
   \normalsize{\textsuperscript{1}Cornell University}\\
   \normalsize{\textsuperscript{2}New York Cooperative Fish and Wildlife Research Unit}\\
@@ -22,11 +23,46 @@ output: pdf_document
 
 ## Study area
 
-We surveyed within the Adirondack Park of the state of New York, an area of 24,000 $\text{km}^2$. 
+We surveyed within the Adirondack Park of the state of New York. It is an area of approximately 24,000 $\text{km}^2$, composing approximately 17% of the state of New York. Elevation ranges from 100m - 1600m. The Adirondack Park contains primarily upland forest habitat dominated by such species as American beech (*Fagus grandifolia*), red spruce (*Picea rubens*), hemlock (*Tsuga canadensis*), sugar maple (*Acer saccharum*), striped maple (*Acer pensylvanicum*), and balsam fir (*Abies balsamea*). Approximately 20% of the park is composed of wetland habitats including open river corridors, floating bogs, and large open bogs dominated by conifers [@Hickey2008].
 
-## Data
+## Field data collection
+
+White-tailed deer scats were collected opportunistically during the years of 2016 and 2017 for the purpose of parasite quantification during a larger survey investigating the population size of moose in the park. The moose study surveyed triangular transects approximately 3 km long, selected by cluster random sampling. The clustering design of the transects were optimized for a spatial capture-recapture survey, including 3 transects per cluster separated by approximately 2-4 km. **INSERT FIGURE FOR MOOSE TRANSECTS**
+
+In 2018, a single-observer distance sampling protocol was implemented to quantify deer scat abundance in addition to measuring parasite intensity. Along each moose transects, 6 distance sampling transects each 100m long were spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total of **N** transects were sampled in 2018. At the specified start point, the field technicians extended a 100m tape to serve as the center line, and made observations along its length. When a scat was detected, its distance perpendicular from the center line, and parallel along the center line was recorded. The perpendicular distance is the focal variable of distance sampling, but the parallel distance provided highly precise location coordinates of the scats -- because the start point of the transect was recorded with greater accuracy (due to longer GPS averaging time), the coordinates of the scats could be refined by translating the start point in space by the angle of the transect, and the parallel distance away from the start point.
+
+## Parasitological analyses
+
+The fecal samples were analyzed by the Cornell Animal Health and Diagnostic Center using several methods. For *F. magna*, Flukefinder, a modified Baermann technique, and fecal quantitative flotation were used. For *P. tenuis*, the modified Baermann, and fecal quantitative flotation methods were implemented. After 2016, the performant method for *F. magna* was determined to be Flukefinder, and for *P. tenuis* the performant method was the modified Baermann technique. This was assessed by **HOW? ASK KRYSTEN**, and validated post-hoc by an occupancy analysis.
+
+### Flukefinder
+
+### Modified Baermann
+
+### Fecal flotation
 
 ## Statistical Model
+
+For analysis of relative risk of infection to moose, we implemented a hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`, which uses integrated Laplace approximation to approximate the posterior distribution of the model parameters, and `inlabru` which extends `INLA` by allowing thinning of a point process -- in this context, by distance sampling. Our measure of relative risk is predicted parasite abundance spatially referenced by the following model.
+
+$$
+\widehat{\Lambda}(s) = \hat{\lambda}(s) * \hat{\delta}(s)
+$$
+
+where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial unit $s$, which is the product of the per-fecal-sample abundance $\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the true fecal abundance $\hat{\delta}(s)$. The per-fecal-sample abundance $\lambda$ is modeled as potentially dependent upon $\delta$, which has an independent likelihood under the distance sampling analytical framework.
+
+### Parasite intensity model
+
+Parasites observed within each scat sample are $\ge 0$, and due to the high prevalence of 0's, we consider a negative binomial distribution in addition to the Poisson. Observations are thus modeled as follows:
+
+\begin{equation}
+\begin{gathered}
+y \sim \text{Poisson}(\mu) \\
+\mu = \beta_0 + \beta_1*x_1 + ... + \beta_p*x_p + \beta_{ds}*\delta(s) + \xi_1(s) \\
+\xi_1(s) = GRF(0, \Sigma)
+\end{gathered}
+\end{equation}
+
 
 # Results
 
