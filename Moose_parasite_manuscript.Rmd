@@ -1,5 +1,7 @@
 ---
-output: pdf_document
+output: 
+  pdf_document:
+    keep_tex: true
 bibliography: moose_parasites.bib
 ---
 
@@ -27,9 +29,9 @@ We surveyed within the Adirondack Park of the state of New York. It is an area o
 
 ## Field data collection
 
-White-tailed deer scats were collected opportunistically during the years of 2016 and 2017 for the purpose of parasite quantification during a larger survey investigating the population size of moose in the park. The moose study surveyed triangular transects approximately 3 km long, selected by cluster random sampling. The clustering design of the transects were optimized for a spatial capture-recapture survey, including 3 transects per cluster separated by approximately 2-4 km. **INSERT FIGURE FOR MOOSE TRANSECTS**
+White-tailed deer fecal pellet groups were collected opportunistically during the years of 2016 and 2017 for the purpose of parasite quantification during a larger survey investigating the population size of moose in the park. The moose study surveyed triangular transects approximately 3 km long, selected by cluster random sampling. The clustering design of the transects were optimized for a spatial capture-recapture survey, including 3 transects per cluster separated by approximately 2-4 km. **INSERT FIGURE FOR MOOSE TRANSECTS**
 
-In 2018, a single-observer distance sampling protocol was implemented to quantify deer scat abundance in addition to measuring parasite intensity. Along each moose transects, 6 distance sampling transects each 100m long were spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total of **N** transects were sampled in 2018. At the specified start point, the field technicians extended a 100m tape to serve as the center line, and made observations along its length. When a scat was detected, its distance perpendicular from the center line, and parallel along the center line was recorded. The perpendicular distance is the focal variable of distance sampling, but the parallel distance provided highly precise location coordinates of the scats -- because the start point of the transect was recorded with greater accuracy (due to longer GPS averaging time), the coordinates of the scats could be refined by translating the start point in space by the angle of the transect, and the parallel distance away from the start point.
+In 2018, a single-observer distance sampling protocol was implemented to quantify deer fecal group abundance in addition to measuring parasite intensity. Along each moose transects, 6 distance sampling transects each 100m long were spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total of **N** transects were sampled in 2018. At the specified start point, field technicians extended a 100m tape to serve as the center line, and made observations along its length. Any number of scat pellets were considered to constitute a fecal group, and the approximate number was recorded. When a fecal group was detected, its distance perpendicular from the center line, and parallel along the center line was recorded. The perpendicular distance is the focal variable of distance sampling, but the parallel distance provided highly precise location coordinates of the scats -- because the start point of the transect was recorded with greater accuracy (due to longer GPS averaging time), the coordinates of the scats could be refined by translating the start point in space by the angle of the transect, and the parallel distance away from the start point.
 
 ## Parasitological analyses
 
@@ -37,31 +39,68 @@ The fecal samples were analyzed by the Cornell Animal Health and Diagnostic Cent
 
 ### Flukefinder
 
+*Needs to be updated by relevant members; Flukefinder methodology not in shared folder*
+
 ### Modified Baermann
 
 ### Fecal flotation
 
 ## Statistical Model
 
-For analysis of relative risk of infection to moose, we implemented a hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`, which uses integrated Laplace approximation to approximate the posterior distribution of the model parameters, and `inlabru` which extends `INLA` by allowing thinning of a point process -- in this context, by distance sampling. Our measure of relative risk is predicted parasite abundance spatially referenced by the following model.
+For analysis of relative risk of infection to moose, we implemented a hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`, which uses integrated nested Laplace approximation to approximate the posterior distribution of model parameters, and `inlabru` which extends `INLA` by integrating thinning of a point process -- in this context, the fecal groups are modeled as a point process thinned by imperfect detection which is modeled by distance sampling. Our measure of relative risk of infection to moose is predicted parasite abundance spatially referenced by the following model.
 
 $$
 \widehat{\Lambda}(s) = \hat{\lambda}(s) * \hat{\delta}(s)
 $$
 
-where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial unit $s$, which is the product of the per-fecal-sample abundance $\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the true fecal abundance $\hat{\delta}(s)$. The per-fecal-sample abundance $\lambda$ is modeled as potentially dependent upon $\delta$, which has an independent likelihood under the distance sampling analytical framework.
+where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial unit $s$, which is the product of the per-fecal-group-sample abundance $\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the true fecal group abundance $\hat{\delta}(s)$. The per-fecal-group-sample abundance $\lambda$ is modeled as potentially dependent upon $\delta$, which has an independent likelihood under the distance sampling analytical framework.
 
 ### Parasite intensity model
 
-Parasites observed within each scat sample are $\ge 0$, and due to the high prevalence of 0's, we consider a negative binomial distribution in addition to the Poisson. Observations are thus modeled as follows:
+Let $S = \{s_i, i = 1, ..., n\} \subset \Omega$ be the $n$ distinct locations where white-tailed deer fecal groups were observed within the observation region $\Omega \subseteq \mathbb{R}^2$, and let $y_i$ be the observed parasite count within the fecal sample.
+
+Parasites observed within each scat sample are $\ge 0$, and due to the high prevalence of 0's, we consider a negative binomial distribution in addition to the Poisson.  On any bounded region $B \subseteq \Omega$, observations are thus modeled as follows:
 
 \begin{equation}
 \begin{gathered}
-y \sim \text{Poisson}(\mu) \\
-\mu = \beta_0 + \beta_1*x_1 + ... + \beta_p*x_p + \beta_{ds}*\delta(s) + \xi_1(s) \\
-\xi_1(s) = GRF(0, \Sigma)
+y_i \sim \text{Poisson}(\mu_i) \\
+\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \beta_{ds}*\hat\delta(s_i) + \Psi_1(s_i) \\
+\Psi_1(s_i) \sim GP(0, \Sigma)
 \end{gathered}
 \end{equation}
+
+Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is the mean function modeled dependent upon spatial covariates $x_j(s)$ and estimated deer fecal group density $\hat\delta(s)$, and finally $\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix $\Sigma$. The covariance function used is the Matérn:
+
+\[
+\text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
+\]
+
+where $\tau, \kappa$ are variance and range scaling parameters, respectively, $\sigma_{\Psi}^2 = 1/(4\pi\kappa^2\tau^2)$ is the marginal variance, and $\mathcal{K}_1$ is the modified Bessel function of the second kind and order 1 (See @Lindgren2015 for the specific representation and estimation of the spatial random effects within INLA). The spatial random field is optional and we test models with and without it to assess support for modeling unstructured spatial dependence.
+
+#### Priors 
+
+#### Covariates on parasite intensity
+
+In our model, we consider the following covariate effects on parasite intensity. Coordinate data (UTM Easting and Northing) are included to model broad-scale spatial trend. We considered a derived variable of precipitation representing the total accumulation of precipitation in the year prior to the data collection date, measured in inches. Precipitation affects the survival of *P. tenuis* and *F. magna* outside of a host (i.e. as L1 larvae, and eggs in feces, respectively), and so it is anticipated that deer would be more likely to be infected in areas of higher rainfall [@Pybus2001]. Additionally, gastropod activity is inhibited by drought, and so higher rainfall would suggest higher risk of infection due to a higher availability of gastropods to be ingested in the case of *P. tenuis*. We used the spatially interpolated PRISM dataset for precipitation [@PRISM]. We considered another derived variable for snowfall accumulation in the snowfall season prior to the data collection date (that is, from September until April prior to the date of survey). Similar to precipitation, we anticipate that areas that experience low snowfall prior to the survey date will exhibit a higher parasite intensity due to increased parasite survival, and increased activity of gastropod intermediate hosts. The National Weather Service's National Snowfall Analysis dataset was used to obtain spatially-referenced snowfall amounts. Distance-to-wetland was considered as a potentially important effect particularly for *F. magna*, as the life cycle of the parasite has a period during which metacercariae encyst on aquatic vegetation and once matured infect aquatic snail intermediate hosts. We hypothesize that intensity of infection for *F. magna* will be greater nearer to wetland systems.
+
+### Distance sampling model
+
+The white tailed deer fecal groups are treated as an log Gaussian Cox point process which are thinned by imperfect observation, and the rate of detection is a parameter to be estimated. Within any bounded region $B \subseteq \Omega$, let $\Lambda(s)$ be the mean intensity function under the following distribution:
+
+\begin{equation}
+\begin{gathered}
+N(B) \sim \text{Poisson}(\Lambda(s)*|B|) \\
+\log\Lambda(s) = \beta_{p+1}*x_{p+1}(s) + ... + \beta_{m}*x_{m}(s) + \Psi_2(s) \\
+\Psi_2(s) \sim GP(0, \Sigma)
+\end{gathered}
+\end{equation}
+
+where, $N(B)$ is the realization of the total abundance of fecal groups within $B$, $x_j(s) \in {x_{p+1}(s), ..., x_{m}(s)}$ are spatial covariates that may be the same as those used in the parasite intensity model, $\Psi_2(s)$ is a Gaussian process distinct to $\Psi_1(s)$.
+
+#### Covariates on deer fecal group intensity
+
+Deer fecal group abundance is assumed to be proportional to deer density, and so factors affecting deer density should correlate with deer fecal group abundance. We do not attempt to quantify deer density *per se* because the density of infected fecal groups within an area more directly influences the probability that intermediate gastropod hosts will become infected, and thus risk of infection to moose.
+
 
 
 # Results
