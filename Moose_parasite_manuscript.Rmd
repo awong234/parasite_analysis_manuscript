@@ -147,15 +147,12 @@ modeled as follows:
 \begin{equation}
 \begin{gathered}
 y_i \sim \text{Poisson}(\mu_i) \\
-\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \Psi_1(s_i) \\
+\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \beta_{ds}*\hat\delta(s_i) + \Psi_1(s_i) \\
 \Psi_1(s_i) \sim GP(0, \Sigma)
 \end{gathered}
 \end{equation}
 
-Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
-the mean function modeled dependent upon spatial covariates $x_j(s)$ and finally
-$\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix
-$\Sigma$. The covariance function used is the Matérn:
+Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is the mean function modeled dependent upon spatial covariates $x_j(s)$ and estimated deer fecal group density $\hat\delta(s)$, and finally $\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix $\Sigma$. The covariance function used is the Matï¿½rn:
 
 \[
 \text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
