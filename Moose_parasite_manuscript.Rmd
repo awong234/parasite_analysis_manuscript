@@ -152,7 +152,11 @@ y_i \sim \text{Poisson}(\mu_i) \\
 \end{gathered}
 \end{equation}
 
-Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is the mean function modeled dependent upon spatial covariates $x_j(s)$ and estimated deer fecal group density $\hat\delta(s)$, and finally $\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix $\Sigma$. The covariance function used is the Mat�rn:
+Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
+the mean function modeled dependent upon spatial covariates $x_j(s)$ and
+estimated deer fecal group density $\hat\delta(s)$, and finally $\Psi_1(s)$ is a
+random Gaussian process with mean 0 and covariance matrix $\Sigma$. The
+covariance function used is the Matern:
 
 \[
 \text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
