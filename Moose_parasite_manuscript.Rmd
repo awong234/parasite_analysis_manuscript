@@ -21,35 +21,86 @@ bibliography: moose_parasites.bib
 
 # Introduction
 
-In North America, moose (*Alces alces*) populations are in decline in parts of their range such as in Minnesota, Vermont, and New Hampshire in the United States of America and Nova Scotia, Alberta, Saskatchewan, Manitoba, and Ontario in Canada [@Lankester2018; @Timmermann2017]. Some researchers point to parasite infection from liver fluke (*Fascioloides magna*) and/or brainworm (*Parelaphastrongylus tenuis*) as contributing factors to these declines [@Murray2006; @Lankester2010; @Lankester2018; @Wunschmann2015], although this claim is controversial [@Lenarz2009] and in some areas may coincide with other factors such as depredation or low reproduction rates that may disguise effects of parasite infection [@SHANNONBARBERMEYER2016; @Kuzyk2018]. Nevertheless, brain worm and liver fluke cause morbidity and mortality in moose populations and should be monitored.
+In North America, moose (*Alces alces*) populations are in decline in parts of
+their range such as in Minnesota, Vermont, and New Hampshire in the United
+States of America and Nova Scotia, Alberta, Saskatchewan, Manitoba, and Ontario
+in Canada [@Lankester2018; @Timmermann2017]. Some researchers point to parasite
+infection from liver fluke (*Fascioloides magna*) and/or brainworm
+(*Parelaphastrongylus tenuis*) as contributing factors to these declines
+[@Murray2006; @Lankester2010; @Lankester2018; @Wunschmann2015], although this
+claim is controversial [@Lenarz2009] and in some areas may coincide with other
+factors such as depredation or low reproduction rates that may disguise effects
+of parasite infection [@SHANNONBARBERMEYER2016; @Kuzyk2018]. Nevertheless, brain
+worm and liver fluke cause morbidity and mortality in moose populations and
+should be monitored.
 
-In the Adirondacks of New York, moose populations have increased since their 
-extirpation in the late 19th century, but their populations have not seen the 
-same growth during the 20th century as their New England counterparts [@Timmermann2017]. 
-Recent estimates of moose population size indicate that there are approximately 600 to 
-1000 moose in the Adirondacks [@Wong2019], a range which does not indicate substantial 
-change from previous assertions of population size [@Hickey2008]. Factors that may be limiting
-the population are not known, but the focal parasites *P. tenuis* and *F. magna* have 
-been observed in moose necropsies with moderate frequency (REF Schuler and/or DEC). 
-*Reproductive rates in NY?* 
+In the Adirondacks of New York, moose populations have increased since their
+extirpation in the late 19th century, but their populations have not seen the
+same growth during the 20th century as their New England counterparts
+[@Timmermann2017]. Recent estimates of moose population size indicate that there
+are approximately 600 to 1000 moose in the Adirondacks [@Wong2019], a range
+which does not indicate substantial change from previous assertions of
+population size [@Hickey2008]. Factors that may be limiting the population are
+not known, but the focal parasites *P. tenuis* and *F. magna* have been observed
+in moose necropsies with moderate frequency (REF Schuler and/or DEC).
+*Reproductive rates in NY?*
 
-Brain worm and liver fluke are endoparasites that infect white-tailed deer (*Odocoileus virginianus*) and moose. Infections by *P. tenuis* are benign to white-tailed deer, but cause severe neurological disorders in moose that often end in death [@Pybus2001; @Lankester2010].
+Brain worm and liver fluke are endoparasites that infect white-tailed deer
+(*Odocoileus virginianus*) and moose. Infections by *P. tenuis* are benign to
+white-tailed deer, but cause severe neurological disorders in moose that often
+end in death [@Pybus2001; @Lankester2010].
 
 # Materials and Methods
 
 ## Study area
 
-We surveyed within the Adirondack Park of the state of New York. It is an area of approximately 24,000 $\text{km}^2$, composing approximately 17% of the state of New York. Elevation ranges from 100m - 1600m. The Adirondack Park contains primarily upland forest habitat dominated by such species as American beech (*Fagus grandifolia*), red spruce (*Picea rubens*), hemlock (*Tsuga canadensis*), sugar maple (*Acer saccharum*), striped maple (*Acer pensylvanicum*), and balsam fir (*Abies balsamea*). Approximately 20% of the park is composed of wetland habitats including open river corridors, floating bogs, and large open bogs dominated by conifers [@Hickey2008].
+We surveyed within the Adirondack Park of the state of New York. It is an area
+of approximately 24,000 $\text{km}^2$, composing approximately 17% of the state
+of New York. Elevation ranges from 100m - 1600m. The Adirondack Park contains
+primarily upland forest habitat dominated by such species as American beech
+(*Fagus grandifolia*), red spruce (*Picea rubens*), hemlock (*Tsuga
+canadensis*), sugar maple (*Acer saccharum*), striped maple (*Acer
+pensylvanicum*), and balsam fir (*Abies balsamea*). Approximately 20% of the
+park is composed of wetland habitats including open river corridors, floating
+bogs, and large open bogs dominated by conifers [@Hickey2008].
 
 ## Field data collection
 
-White-tailed deer fecal pellet groups were collected opportunistically during the years of 2016 and 2017 for the purpose of parasite quantification during a larger survey investigating the population size of moose in the park. The moose study surveyed triangular transects approximately 3 km long, selected by cluster random sampling. The clustering design of the transects were optimized for a spatial capture-recapture survey, including 3 transects per cluster separated by approximately 2-4 km. **INSERT FIGURE FOR MOOSE TRANSECTS**
+White-tailed deer fecal pellet groups were collected opportunistically during
+the years of 2016 and 2017 for the purpose of parasite quantification during a
+larger survey investigating the population size of moose in the park. The moose
+study surveyed triangular transects approximately 3 km long, selected by cluster
+random sampling. The clustering design of the transects were optimized for a
+spatial capture-recapture survey, including 3 transects per cluster separated by
+approximately 2-4 km. **INSERT FIGURE FOR MOOSE TRANSECTS**
 
-In 2018, a single-observer distance sampling protocol was implemented to quantify deer fecal group abundance in addition to measuring parasite intensity. Along each moose transects, 6 distance sampling transects each 100m long were spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total of **N** transects were sampled in 2018. At the specified start point, field technicians extended a 100m tape to serve as the center line, and made observations along its length. Any number of scat pellets were considered to constitute a fecal group, and the approximate number was recorded. When a fecal group was detected, its distance perpendicular from the center line, and parallel along the center line was recorded. The perpendicular distance is the focal variable of distance sampling, but the parallel distance provided highly precise location coordinates of the scats -- because the start point of the transect was recorded with greater accuracy (due to longer GPS averaging time), the coordinates of the scats could be refined by translating the start point in space by the angle of the transect, and the parallel distance away from the start point.
+In 2018, a single-observer distance sampling protocol was implemented to
+quantify deer fecal group abundance in addition to measuring parasite intensity.
+Along each moose transects, 6 distance sampling transects each 100m long were
+spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total
+of **N** transects were sampled in 2018. At the specified start point, field
+technicians extended a 100m tape to serve as the center line, and made
+observations along its length. Any number of scat pellets were considered to
+constitute a fecal group, and the approximate number was recorded. When a fecal
+group was detected, its distance perpendicular from the center line, and
+parallel along the center line was recorded. The perpendicular distance is the
+focal variable of distance sampling, but the parallel distance provided highly
+precise location coordinates of the scats -- because the start point of the
+transect was recorded with greater accuracy (due to longer GPS averaging time),
+the coordinates of the scats could be refined by translating the start point in
+space by the angle of the transect, and the parallel distance away from the
+start point.
 
 ## Parasitological analyses
 
-The fecal samples were analyzed by the Cornell Animal Health and Diagnostic Center using several methods. For *F. magna*, Flukefinder, a modified Baermann technique, and fecal quantitative flotation were used. For *P. tenuis*, the modified Baermann, and fecal quantitative flotation methods were implemented. After 2016, the performant method for *F. magna* was determined to be Flukefinder, and for *P. tenuis* the performant method was the modified Baermann technique. This was assessed by **HOW? ASK KRYSTEN**, and validated post-hoc by an occupancy analysis.
+The fecal samples were analyzed by the Cornell Animal Health and Diagnostic
+Center using several methods. For *F. magna*, Flukefinder, a modified Baermann
+technique, and fecal quantitative flotation were used. For *P. tenuis*, the
+modified Baermann, and fecal quantitative flotation methods were implemented.
+After 2016, the performant method for *F. magna* was determined to be
+Flukefinder, and for *P. tenuis* the performant method was the modified Baermann
+technique. This was assessed by **HOW? ASK KRYSTEN**, and validated post-hoc by
+an occupancy analysis.
 
 ### Flukefinder
 
@@ -61,19 +112,37 @@ The fecal samples were analyzed by the Cornell Animal Health and Diagnostic Cent
 
 ## Statistical Model
 
-For analysis of relative risk of infection to moose, we implemented a hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`, which uses integrated nested Laplace approximation to approximate the posterior distribution of model parameters, and `inlabru` which extends `INLA` by integrating thinning of a point process -- in this context, the fecal groups are modeled as a point process thinned by imperfect detection which is modeled by distance sampling. Our measure of relative risk of infection to moose is predicted parasite abundance spatially referenced by the following model.
+For analysis of relative risk of infection to moose, we implemented a
+hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`,
+which uses integrated nested Laplace approximation to approximate the posterior
+distribution of model parameters, and `inlabru` which extends `INLA` by
+integrating thinning of a point process -- in this context, the fecal groups are
+modeled as a point process thinned by imperfect detection which is modeled by
+distance sampling. Our measure of relative risk of infection to moose is
+predicted parasite abundance spatially referenced by the following model.
 
 $$
 \widehat{\Lambda}(s) = \hat{\lambda}(s) * \hat{\delta}(s)
 $$
 
-where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial unit $s$, which is the product of the per-fecal-group-sample abundance $\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the true fecal group abundance $\hat{\delta}(s)$. The per-fecal-group-sample abundance $\lambda$ is modeled as potentially dependent upon $\delta$, which has an independent likelihood under the distance sampling analytical framework.
+where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial
+unit $s$, which is the product of the per-fecal-group-sample abundance
+$\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the true
+fecal group abundance $\hat{\delta}(s)$. The per-fecal-group-sample abundance
+$\lambda$ is modeled as potentially dependent upon $\delta$, which has an
+independent likelihood under the distance sampling analytical framework.
 
 ### Parasite intensity model
 
-Let $S = \{s_i, i = 1, ..., n\} \subset \Omega$ be the $n$ distinct locations where white-tailed deer fecal groups were observed within the observation region $\Omega \subseteq \mathbb{R}^2$, and let $y_i$ be the observed parasite count within the fecal sample.
+Let $S = \{s_i, i = 1, ..., n\} \subset \Omega$ be the $n$ distinct locations
+where white-tailed deer fecal groups were observed within the observation region
+$\Omega \subseteq \mathbb{R}^2$, and let $y_i$ be the observed parasite count
+within the fecal sample.
 
-Parasites observed within each scat sample are $\ge 0$, and due to the high prevalence of 0's, we consider a negative binomial distribution in addition to the Poisson.  On any bounded region $B \subseteq \Omega$, observations are thus modeled as follows:
+Parasites observed within each scat sample are $\ge 0$, and due to the high
+prevalence of 0's, we consider a negative binomial distribution in addition to
+the Poisson.  On any bounded region $B \subseteq \Omega$, observations are thus
+modeled as follows:
 
 \begin{equation}
 \begin{gathered}
@@ -83,23 +152,58 @@ y_i \sim \text{Poisson}(\mu_i) \\
 \end{gathered}
 \end{equation}
 
-Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is the mean function modeled dependent upon spatial covariates $x_j(s)$ and finally $\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix $\Sigma$. The covariance function used is the Matérn:
+Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
+the mean function modeled dependent upon spatial covariates $x_j(s)$ and finally
+$\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix
+$\Sigma$. The covariance function used is the Matérn:
 
 \[
 \text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
 \]
 
-where $\tau, \kappa$ are variance and range scaling parameters, respectively, $\sigma_{\Psi}^2 = 1/(4\pi\kappa^2\tau^2)$ is the marginal variance, and $\mathcal{K}_1$ is the modified Bessel function of the second kind and order 1 (See @Lindgren2015 for the specific representation and estimation of the spatial random effects within INLA). The spatial random field is optional and we test models with and without it to assess support for modeling unstructured spatial dependence.
+where $\tau, \kappa$ are variance and range scaling parameters, respectively,
+$\sigma_{\Psi}^2 = 1/(4\pi\kappa^2\tau^2)$ is the marginal variance, and
+$\mathcal{K}_1$ is the modified Bessel function of the second kind and order 1
+(See @Lindgren2015 for the specific representation and estimation of the spatial
+random effects within INLA). The spatial random field is optional and we test
+models with and without it to assess support for modeling unstructured spatial
+dependence.
 
 #### Priors 
 
 #### Covariates on parasite intensity
 
-In our model, we consider the following covariate effects on parasite intensity. Coordinate data (UTM Easting and Northing) are included to model broad-scale spatial trend. We considered a derived variable of precipitation representing the total accumulation of precipitation in the year prior to the data collection date, measured in inches. Precipitation affects the survival of *P. tenuis* and *F. magna* outside of a host (i.e. as L1 larvae, and eggs in feces, respectively), and so it is anticipated that deer would be more likely to be infected in areas of higher rainfall [@Pybus2001]. Additionally, gastropod activity is inhibited by drought, and so higher rainfall would suggest higher risk of infection due to a higher availability of gastropods to be ingested in the case of *P. tenuis* [@Lankester2018]. We used the spatially interpolated PRISM dataset for precipitation [@PRISM]. We considered another derived variable for snowfall accumulation in the snowfall season prior to the data collection date (that is, from September until April prior to the date of survey). Similar to precipitation, we anticipate that areas that experience low snowfall prior to the survey date will exhibit a higher parasite intensity due to increased parasite survival, and increased activity of gastropod intermediate hosts. The National Weather Service's National Snowfall Analysis dataset was used to obtain spatially-referenced snowfall amounts. Distance-to-wetland was considered as a potentially important effect particularly for *F. magna*, as the life cycle of the parasite has a period during which metacercariae encyst on aquatic vegetation and once matured infect aquatic snail intermediate hosts. We hypothesize that intensity of infection for *F. magna* will be greater nearer to wetland systems.
+In our model, we consider the following covariate effects on parasite intensity.
+Coordinate data (UTM Easting and Northing) are included to model broad-scale
+spatial trend. We considered a derived variable of precipitation representing
+the total accumulation of precipitation in the year prior to the data collection
+date, measured in inches. Precipitation affects the survival of *P. tenuis* and
+*F. magna* outside of a host (i.e. as L1 larvae, and eggs in feces,
+respectively), and so it is anticipated that deer would be more likely to be
+infected in areas of higher rainfall [@Pybus2001]. Additionally, gastropod
+activity is inhibited by drought, and so higher rainfall would suggest higher
+risk of infection due to a higher availability of gastropods to be ingested in
+the case of *P. tenuis* [@Lankester2018]. We used the spatially interpolated
+PRISM dataset for precipitation [@PRISM]. We considered another derived variable
+for snowfall accumulation in the snowfall season prior to the data collection
+date (that is, from September until April prior to the date of survey). Similar
+to precipitation, we anticipate that areas that experience low snowfall prior to
+the survey date will exhibit a higher parasite intensity due to increased
+parasite survival, and increased activity of gastropod intermediate hosts. The
+National Weather Service's National Snowfall Analysis dataset was used to obtain
+spatially-referenced snowfall amounts. Distance-to-wetland was considered as a
+potentially important effect particularly for *F. magna*, as the life cycle of
+the parasite has a period during which metacercariae encyst on aquatic
+vegetation and once matured infect aquatic snail intermediate hosts. We
+hypothesize that intensity of infection for *F. magna* will be greater nearer to
+wetland systems.
 
 ### Distance sampling model
 
-The white tailed deer fecal groups are treated as an log Gaussian Cox point process which are thinned by imperfect observation, and the rate of detection is a parameter to be estimated. Within any bounded region $B \subseteq \Omega$, let $\Lambda(s)$ be the mean intensity function under the following distribution:
+The white tailed deer fecal groups are treated as an log Gaussian Cox point
+process which are thinned by imperfect observation, and the rate of detection is
+a parameter to be estimated. Within any bounded region $B \subseteq \Omega$, let
+$\Lambda(s)$ be the mean intensity function under the following distribution:
 
 \begin{equation}
 \begin{gathered}
@@ -109,11 +213,19 @@ N(B) \sim \text{Poisson}(\Lambda(s)*|B|) \\
 \end{gathered}
 \end{equation}
 
-where, $N(B)$ is the realization of the total abundance of fecal groups within $B$, $x_j(s) \in {x_{p+1}(s), ..., x_{m}(s)}$ are spatial covariates that may be the same as those used in the parasite intensity model, $\Psi_2(s)$ is a Gaussian process distinct to $\Psi_1(s)$.
+where, $N(B)$ is the realization of the total abundance of fecal groups within
+$B$, $x_j(s) \in {x_{p+1}(s), ..., x_{m}(s)}$ are spatial covariates that may be
+the same as those used in the parasite intensity model, $\Psi_2(s)$ is a
+Gaussian process distinct to $\Psi_1(s)$.
 
 #### Covariates on deer fecal group intensity
 
-Deer fecal group abundance is assumed to be proportional to deer density, and so factors affecting deer density should correlate with deer fecal group abundance. We do not attempt to quantify deer density *per se* because the density of infected fecal groups within an area more directly influences the probability that intermediate gastropod hosts will become infected, and thus risk of infection to moose.
+Deer fecal group abundance is assumed to be proportional to deer density, and so
+factors affecting deer density should correlate with deer fecal group abundance.
+We do not attempt to quantify deer density *per se* because the density of
+infected fecal groups within an area more directly influences the probability
+that intermediate gastropod hosts will become infected, and thus risk of
+infection to moose.
 
 
 
