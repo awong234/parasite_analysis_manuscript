@@ -21,8 +21,8 @@ bibliography: moose_parasites.bib
 
 # Introduction
 
-In North America, moose (*Alces alces*) populations are in decline in parts of
-their range such as in Minnesota, Vermont, and New Hampshire in the United
+Moose (*Alces alces*) populations are in decline in parts of their range in
+North America such as in Minnesota, Vermont, and New Hampshire in the United
 States of America and Nova Scotia, Alberta, Saskatchewan, Manitoba, and Ontario
 in Canada [@Lankester2018; @Timmermann2017]. Some researchers point to parasite
 infection from liver fluke (*Fascioloides magna*) and/or brainworm
@@ -41,9 +41,8 @@ same growth during the 20th century as their New England counterparts
 are approximately 600 to 1000 moose in the Adirondacks [@Wong2019], a range
 which does not indicate substantial change from previous assertions of
 population size [@Hickey2008]. Factors that may be limiting the population are
-not known, but the focal parasites *P. tenuis* and *F. magna* have been observed
+not established, but the focal parasites *P. tenuis* and *F. magna* have been observed
 in moose necropsies with moderate frequency (REF Schuler and/or DEC).
-*Reproductive rates in NY?*
 
 Brain worm and liver fluke are endoparasites that infect white-tailed deer
 (*Odocoileus virginianus*) and moose. Infections by *P. tenuis* are benign to
