@@ -90,6 +90,9 @@ the coordinates of the scats could be refined by translating the start point in
 space by the angle of the transect, and the parallel distance away from the
 start point.
 
+Fifty-seven white-tailed deer fecal samples were collected in 2016, 391 samples
+were collected in 2017, and 174 samples were collected in 2018.
+
 ## Parasitological analyses
 
 The fecal samples were analyzed by the Cornell Animal Health and Diagnostic
@@ -98,8 +101,8 @@ technique, and fecal quantitative flotation were used. For *P. tenuis*, the
 modified Baermann, and fecal quantitative flotation methods were implemented.
 After 2016, the performant method for *F. magna* was determined to be
 Flukefinder, and for *P. tenuis* the performant method was the modified Baermann
-technique. This was assessed by **HOW? ASK KRYSTEN**, and validated post-hoc by
-an occupancy analysis.
+technique. This was assessed by **HOW? ASK KRYSTEN**, and validated post-hoc to
+have the greatest detection probability by an occupancy analysis.
 
 ### Flukefinder
 
@@ -126,10 +129,8 @@ $$
 
 where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial
 unit $s$, which is the product of the per-fecal-group-sample abundance
-$\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the true
-fecal group abundance $\hat{\delta}(s)$. The per-fecal-group-sample abundance
-$\lambda$ is modeled as potentially dependent upon $\delta$, which has an
-independent likelihood under the distance sampling analytical framework.
+$\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the
+estimated fecal group abundance $\hat{\delta}(s)$.
 
 ### Parasite intensity model
 
@@ -139,23 +140,22 @@ $\Omega \subseteq \mathbb{R}^2$, and let $y_i$ be the observed parasite count
 within the fecal sample.
 
 Parasites observed within each scat sample are $\ge 0$, and due to the high
-prevalence of 0's, we consider a negative binomial distribution in addition to
-the Poisson.  On any bounded region $B \subseteq \Omega$, observations are thus
+prevalence of 0's, we considered a negative binomial distribution in addition to
+the Poisson. On any bounded region $B \subseteq \Omega$, observations are thus
 modeled as follows:
 
 \begin{equation}
 \begin{gathered}
 y_i \sim \text{Poisson}(\mu_i) \\
-\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \beta_{ds}*\hat\delta(s_i) + \Psi_1(s_i) \\
+\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \Psi_1(s_i) \\
 \Psi_1(s_i) \sim GP(0, \Sigma)
 \end{gathered}
 \end{equation}
 
 Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
-the mean function modeled dependent upon spatial covariates $x_j(s)$ and
-estimated deer fecal group density $\hat\delta(s)$, and finally $\Psi_1(s)$ is a
-random Gaussian process with mean 0 and covariance matrix $\Sigma$. The
-covariance function used is the Matern:
+the mean function modeled dependent upon spatial covariates $x_j(s)$, and
+$\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix
+$\Sigma$. The covariance function used is the Matern:
 
 \[
 \text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
@@ -191,12 +191,17 @@ to precipitation, we anticipate that areas that experience low snowfall prior to
 the survey date will exhibit a higher parasite intensity due to increased
 parasite survival, and increased activity of gastropod intermediate hosts. The
 National Weather Service's National Snowfall Analysis dataset was used to obtain
-spatially-referenced snowfall amounts. Distance-to-wetland was considered as a
-potentially important effect particularly for *F. magna*, as the life cycle of
-the parasite has a period during which metacercariae encyst on aquatic
-vegetation and once matured infect aquatic snail intermediate hosts. We
-hypothesize that intensity of infection for *F. magna* will be greater nearer to
-wetland systems.
+spatially-referenced snowfall amounts.
+
+Local terrain basins where water may collect were considered as a potentially
+important effect particularly for *F. magna*, as the life cycle of the parasite
+has a period during which metacercariae encyst on aquatic vegetation and once
+matured infect aquatic snail intermediate hosts. We hypothesized that intensity
+of infection for *F. magna* will be greater in basins than on slopes or peaks,
+and we assessed this by the geomorphon tool in QGIS, assessed at a resolution of
+40km (1600 squared-kilometers). This resolution was selected because it
+maximized the variation in the geomorphon value types relative to our sample
+locations.
 
 ### Distance sampling model
 
@@ -227,7 +232,23 @@ infected fecal groups within an area more directly influences the probability
 that intermediate gastropod hosts will become infected, and thus risk of
 infection to moose.
 
+We modeled deer fecal group abundance to be dependent upon habitat, road
+density, elevation, and a local spatial random effect. 
 
+Habitat was obtained from The Nature Conservancy's Terrestrial Habitat Map
+[@Feree2013] and reclassified into major categories of deciduous, coniferous,
+and mixed forest, wetland, and 'other' (see Appendix for reclass mapping).
+
+Road density was derived from the 2017 TIGER line dataset [@TIGER2017] as the
+kernel density of roads separated into "major roads" (highways, interstates,
+county roads), and "minor roads" (local streets, residence drives, etc.). This
+was evaluated using the ArcMap tool "Kernel Density Estimate" under default
+settings.
+
+Elevation was obtained from the National Elevation Dataset [@NED2017].
+
+We assumed homogeneous detection probability over all of our surveys in our
+modeling.
 
 # Results
 
