@@ -162,32 +162,21 @@ have the greatest detection probability by an occupancy analysis.
 
 ### Fecal flotation
 
-## Statistical Model
+## Statistical Models
 
 For analysis of relative risk of infection to moose, we implemented a
 hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`,
 which uses integrated nested Laplace approximation to approximate the posterior
-distribution of model parameters, and `inlabru` which extends `INLA` by
-integrating thinning of a point process -- in this context, the fecal groups are
-modeled as a point process thinned by imperfect detection which is modeled by
-distance sampling. Our measure of relative risk of infection to moose is
-predicted parasite abundance spatially referenced by the following model.
-
-$$
-\widehat{\Lambda}(s) = \hat{\lambda}(s) * \hat{\delta}(s)
-$$
-
-where, $\widehat{\Lambda}(s)$ is the estimated parasite abundance at spatial
-unit $s$, which is the product of the per-fecal-group-sample abundance
-$\hat{\lambda}(s)$ (or, intensity in the epidemiological sense), and the
-estimated fecal group abundance $\hat{\delta}(s)$.
+distribution of model parameters. 
 
 ### Parasite intensity model
 
-Let $S = \{s_i, i = 1, ..., n\} \subset \Omega$ be the $n$ distinct locations
-where white-tailed deer fecal groups were observed within the observation region
-$\Omega \subseteq \mathbb{R}^2$, and let $y_i$ be the observed parasite count
-within the fecal sample.
+Let $\widehat{\lambda}(s)$ be the estimated per-fecal-group-sample abundance
+(or, intensity in the epidemiological sense). Let $S = \{s_i, i = 1, ..., n\}
+\subset \Omega$ be the $n$ distinct locations where white-tailed deer fecal
+groups were observed within the observation region $\Omega \subseteq
+\mathbb{R}^2$, and let $y_i$ be the observed parasite count within the fecal
+sample.
 
 Parasites observed within each scat sample are $\ge 0$, and due to the high
 prevalence of 0's, we considered a negative binomial distribution in addition to
@@ -253,52 +242,10 @@ and we assessed this by the geomorphon tool in QGIS, assessed at a resolution of
 maximized the variation in the geomorphon value types relative to our sample
 locations.
 
-### Distance sampling model
 
-The white tailed deer fecal groups are treated as an log Gaussian Cox point
-process which are thinned by imperfect observation, and the rate of detection is
-a parameter to be estimated. Within any bounded region $B \subseteq \Omega$, let
-$\Lambda(s)$ be the mean intensity function under the following distribution:
+#### Priors
 
-\begin{equation}
-\begin{gathered}
-N(B) \sim \text{Poisson}(\Lambda(s)*|B|) \\
-\log\Lambda(s) = \beta_{p+1}*x_{p+1}(s) + ... + \beta_{m}*x_{m}(s) + \Psi_2(s) \\
-\Psi_2(s) \sim GP(0, \Sigma)
-\end{gathered}
-\end{equation}
 
-where, $N(B)$ is the realization of the total abundance of fecal groups within
-$B$, $x_j(s) \in {x_{p+1}(s), ..., x_{m}(s)}$ are spatial covariates that may be
-the same as those used in the parasite intensity model, $\Psi_2(s)$ is a
-Gaussian process distinct to $\Psi_1(s)$.
-
-#### Covariates on deer fecal group intensity
-
-Deer fecal group abundance is assumed to be proportional to deer density, and so
-factors affecting deer density should correlate with deer fecal group abundance.
-We do not attempt to quantify deer density *per se* because the density of
-infected fecal groups within an area more directly influences the probability
-that intermediate gastropod hosts will become infected, and thus risk of
-infection to moose.
-
-We modeled deer fecal group abundance to be dependent upon habitat, road
-density, elevation, and a local spatial random effect. 
-
-Habitat was obtained from The Nature Conservancy's Terrestrial Habitat Map
-[@Feree2013] and reclassified into major categories of deciduous, coniferous,
-and mixed forest, wetland, and 'other' (see Appendix for reclass mapping).
-
-Road density was derived from the 2017 TIGER line dataset [@TIGER2017] as the
-kernel density of roads separated into "major roads" (highways, interstates,
-county roads), and "minor roads" (local streets, residence drives, etc.). This
-was evaluated using the ArcMap tool "Kernel Density Estimate" under default
-settings.
-
-Elevation was obtained from the National Elevation Dataset [@NED2017].
-
-We assumed homogeneous detection probability over all of our surveys in our
-modeling.
 
 # Results
 
