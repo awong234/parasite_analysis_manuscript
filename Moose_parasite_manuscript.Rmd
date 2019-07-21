@@ -97,7 +97,8 @@ as New York moose had 5-6x higher eosinophil (white blood cell) counts than New
 Hampshire or Maine moose.
 
 The geospatial distribution of infection risk to moose is a concern for
-management, and this 
+management, and we attempt to quantify this by first assessing the spatial
+patterns in infection of white-tailed deer fecal matter.
 
 # Materials and Methods
 
