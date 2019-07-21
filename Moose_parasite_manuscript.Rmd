@@ -53,6 +53,28 @@ of parasite infection [@SHANNONBARBERMEYER2016; @Kuzyk2018]. Nevertheless, brain
 worm and liver fluke cause morbidity and mortality in moose populations and
 should be monitored.
 
+Infections by *P. tenuis* are benign to white-tailed deer (*Odocoileus
+virginianus*), but cause severe neurological disorders in moose caused by
+migration of larvae through the central nervous system that often end in death
+[@Pybus2001; @Lankester2010]. *Parelaphastrongylus tenuis* is acquired via
+ingestion of gastropod intermediate hosts, in which *P. tenuis* larvae have molt
+from L1 to L2, and L3 stages over approximately 4 weeks. Gastropods become
+infected by ingesting the mucuosal layer surrounding white-tailed deer fecal
+pellets, or from the soil over which the L1-stage larvae have been washed by
+precipitation.
+
+*Fascioloides magna* infection damage manifests as lesions in the hepatic tissue
+due to migration of immature flukes or fibrous encapsulation of adult flukes
+[@Pybus2001]. Again, moose are thought to become infected through ingestion of
+gastropod intermediate hosts. A major distinction is that the gastropod hosts
+are aquatic snails (typically within the genus *Lymnaea*) that become infected
+by free-swimming miracidia introduced to the water as eggs in white-tailed deer
+feces [@Pybus2001; @Peterson2013; @Malcicka2015]. The meracidia develop within
+the snail, ultimately generating cercariae that encyst as metacercariae on
+aquatic vegetation. Because moose select aquatic vegetation as a significant
+proportion of their diet, *F. magna* metacercariae are presumably commonly
+consumed by moose.
+
 In the Adirondacks of New York, moose populations have increased since their
 extirpation in the late 19th century, but their populations have not seen the
 same growth during the 20th century as their New England counterparts
@@ -60,13 +82,22 @@ same growth during the 20th century as their New England counterparts
 are approximately 600 to 1000 moose in the Adirondacks [@Wong2019], a range
 which does not indicate substantial change from previous assertions of
 population size [@Hickey2008]. Factors that may be limiting the population are
-not established, but the focal parasites *P. tenuis* and *F. magna* have been observed
-in moose necropsies with moderate frequency (REF Schuler and/or DEC).
+not established, but the focal parasites *P. tenuis* and *F. magna* have been
+observed in moose necropsies with moderate frequency (REF Schuler and/or DEC).
 
-Brain worm and liver fluke are endoparasites that infect white-tailed deer
-(*Odocoileus virginianus*) and moose. Infections by *P. tenuis* are benign to
-white-tailed deer, but cause severe neurological disorders in moose that often
-end in death [@Pybus2001; @Lankester2010].
+The New York State Department of Environmental Conservation (DEC) has been
+gathering information on moose health from incidental mortalities (n = 117)
+since 2000 and the Animal Health Diagnostic Center (AHDC) started live moose
+testing in 2015. Moose in New York State appear to be substantially impacted by
+several parasites excepting winter ticks, which are more common in New England
+states. Over 19% of mortalities were attributed to P. tenuis, 21% of moose
+carcasses examined were infected with liver flukes (Fascioloides magna).
+Migrating parasites cannot be detected in live moose, but were likely a problem
+as New York moose had 5-6x higher eosinophil (white blood cell) counts than New
+Hampshire or Maine moose.
+
+The geospatial distribution of infection risk to moose is a concern for
+management, and this 
 
 # Materials and Methods
 
