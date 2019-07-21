@@ -252,4 +252,16 @@ modeling.
 
 # Results
 
+
+
+## Model results
+
+## Bayesian model checks
+
+### Conditional predictive ordinate
+
+### Probability integral transform
+
 # Discussion
+
+# References
