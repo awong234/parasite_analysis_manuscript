@@ -28,8 +28,8 @@ Adirondacks region. Field surveys were conducted to collect white-tailed deer
 (*Odocoileus virginianus*) fecal pellets under distance sampling protocol both
 to measure relative deer density and to diagnose the infection status of the
 pellets by *P. tenuis* and *F. magna*. Over the three years of data collection,
-40.9% of fecal pellets collected contained *F. magna* eggs, and 34.7% of fecal
-pellets contained L1 *P. tenuis* larvae ($N=622$). We attempted to quantify the
+41.7% of fecal pellets collected ($N=656$) contained *F. magna* eggs, and 34.7%
+of fecal pellets contained L1 *P. tenuis* larvae. We attempted to quantify the
 geospatial distribution of parasite infection using landscape variables such as
 habitat, geomorphon structure, elevation, and spatial trend, but goodness-of-fit
 tests indicated poor fit of the model structures we evaluated, whether assessed
