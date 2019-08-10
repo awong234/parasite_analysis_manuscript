@@ -180,9 +180,9 @@ have the greatest detection probability by an occupancy analysis.
 ## Statistical Models
 
 For analysis of relative risk of infection to moose, we implemented a
-hierarchical Bayesian modeling framework analyzed with the `R` packages `INLA`,
+hierarchical Bayesian modeling framework analyzed with the `R` package `INLA`,
 which uses integrated nested Laplace approximation to approximate the posterior
-distribution of model parameters. 
+distribution of model parameters.
 
 ### Parasite intensity model
 
@@ -194,9 +194,9 @@ groups were observed within the observation region $\Omega \subseteq
 sample.
 
 Parasites observed within each scat sample are $\ge 0$, and due to the high
-prevalence of 0's, we considered a negative binomial distribution in addition to
-the Poisson. On any bounded region $B \subseteq \Omega$, observations are thus
-modeled as follows:
+prevalence of 0's, we considered a negative binomial distribution for the
+response in addition to the Poisson. On any bounded region $B \subseteq \Omega$,
+observations are thus modeled as follows:
 
 \begin{equation}
 \begin{gathered}
@@ -208,7 +208,7 @@ y_i \sim \text{Poisson}(\mu_i) \\
 
 Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
 the mean function modeled dependent upon spatial covariates $x_j(s)$, and
-$\Psi_1(s)$ is a random Gaussian process with mean 0 and covariance matrix
+$\Psi_1(s)$ is a Gaussian process with mean 0 and covariance matrix
 $\Sigma$. The covariance function used is the Matern:
 
 \[
@@ -223,7 +223,10 @@ random effects within INLA). The spatial random field is optional and we test
 models with and without it to assess support for modeling unstructured spatial
 dependence.
 
-#### Priors 
+Additionally, we assessed the fit of models treating the response as a binary
+random variable modeled under the binomial distribution and zero-inflated binomial
+distribution, with the same model of spatial dependence instead using a
+different link function.
 
 #### Covariates on parasite intensity
 
@@ -241,11 +244,11 @@ the case of *P. tenuis* [@Lankester2018]. We used the spatially interpolated
 PRISM dataset for precipitation [@PRISM]. We considered another derived variable
 for snowfall accumulation in the snowfall season prior to the data collection
 date (that is, from September until April prior to the date of survey). Similar
-to precipitation, we anticipate that areas that experience low snowfall prior to
-the survey date will exhibit a higher parasite intensity due to increased
-parasite survival, and increased activity of gastropod intermediate hosts. The
-National Weather Service's National Snowfall Analysis dataset was used to obtain
-spatially-referenced snowfall amounts.
+to precipitation, we anticipate that areas that experience low snowfall in the
+year prior to the survey date will exhibit a higher parasite intensity due to
+increased parasite survival, and increased activity of gastropod intermediate
+hosts. The National Weather Service's National Snowfall Analysis dataset was
+used to obtain spatially-referenced snowfall amounts.
 
 Local terrain basins where water may collect were considered as a potentially
 important effect particularly for *F. magna*, as the life cycle of the parasite
@@ -254,8 +257,8 @@ matured infect aquatic snail intermediate hosts. We hypothesized that intensity
 of infection for *F. magna* will be greater in basins than on slopes or peaks,
 and we assessed this by the geomorphon tool in QGIS, assessed at a resolution of
 40km (1600 squared-kilometers). This resolution was selected because it
-maximized the variation in the geomorphon value types relative to our sample
-locations.
+maximized the variation in the geomorphon classification distribution relative
+to our sample locations.
 
 
 #### Priors
