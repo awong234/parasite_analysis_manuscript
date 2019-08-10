@@ -367,9 +367,9 @@ and the probability integral transform (PIT).
 The conditional predictive ordinate (CPO) is a leave-one-out cross-validation measure,
 defined as
 
-$$ 
-\text{CPO_i} = \pi(y_i^{\text{obs}} | y_{-i}) 
-$$ 
+$$
+\text{CPO}_i = \pi(y_i^{\text{obs}} | y_{-i})
+$$
 
 and describes the probability of observing of a particular observation when all
 of the data but observation $i$ are used to fit to the model. Very small values
