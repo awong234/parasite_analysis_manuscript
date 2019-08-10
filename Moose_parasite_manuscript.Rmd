@@ -19,6 +19,18 @@ bibliography: moose_parasites.bib
 
 \newpage
 
+```{r, include=F}
+library(ggplot2)
+library(unmarked)
+library(dplyr)
+library(reshape2)
+library(knitr)
+library(kableExtra)
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
 # Abstract
 
 Endoparasites *Parelaphastrongylus tenuis* and *Fascioloides magna* were
