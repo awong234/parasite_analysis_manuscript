@@ -263,6 +263,29 @@ to our sample locations.
 
 #### Priors
 
+### Model Specifications
+
+Six models were applied using the covariates developed above upon response
+variables for both *F. magna* and *P. tenuis*.
+
+\begin{table}[H]
+
+\caption{\label{tab:models} Model specifications and their covariates}
+\centering
+\begin{tabular}[H]{ll}
+\hiderowcolors
+\toprule
+Model & Formula \\
+\midrule
+Null Model & . \\
+Full Model & \makecell[l]{Easting + Northing + Precipitation + Snow + Geomorphon + Elevation + \\ Gaussian Process (GP)} \\
+Fixed Effects Model & Easting + Northing + Precipitation + Snow + Geomorphon + Elevation \\
+Fixed Effects Parasite Survival Model & Precipitation + Snow + Geomorphon \\
+Two-scale spatial model & Easting + Northing + GP \\
+Two-scale spatial model and elevation & Easting + Northing + Elevation + GP \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 # Results
