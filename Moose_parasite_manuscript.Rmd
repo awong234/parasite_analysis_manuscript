@@ -3,6 +3,8 @@ output:
   pdf_document:
     keep_tex: true
 bibliography: moose_parasites.bib
+header-includes:
+  - \usepackage{float}
 ---
 
 \vspace*{\stretch{1.0}}
