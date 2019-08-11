@@ -419,13 +419,86 @@ j_table = cbind.data.frame(c_table, p_table[, c(3:5)])
 
 knitr::kable(j_table, format = 'latex', booktabs = T, caption = "\\label{tab:posTable} Raw frequencies and proportions of diagnoses performed on white-tailed deer fecal samples between 2016 and 2018.") %>% 
   collapse_rows(columns = 1, latex_hline = 'major', valign = 'middle') %>%
-  kable_styling(latex_options = c('striped', 'HOLD_position')) %>% 
+  kable_styling(latex_options = c('HOLD_position')) %>% 
   add_header_above(c(" " = 2, "Counts" = 3, "Proportions" = 3))
 
 ```
 
 ## Model results
 
+Model comparison was implemented by comparison of wAIC values produced by INLA.
+This information criterion is a measure of *relative* out-of-sample predictive
+accuracy, and lower wAIC values indicate greater relative performance.
+
+```{r aicvals, warning = F, include = F}
+load('../DiseaseAnalysis/model_outputs/aicvals_fmagna.Rdata')
+load('../DiseaseAnalysis/model_outputs/aicvals_ptenuis.Rdata')
+
+model_matches = data.frame(fitnames = c("null_model", 
+                                        "full_model", 
+                                        "red_mod_linear_all_cov", 
+                                        "red_mod_survival",
+                                        "red_mod_spatial", 
+                                        "red_mod_spatial_elev"),
+                           pubnames = c("Null Model", 
+                                        "Full model", 
+                                        "Fixed effects model", 
+                                        "Fixed Effects Parasite Survival Model", 
+                                        "Two-scale spatial model", 
+                                        "Two-scale spatial model and elevation"),
+                           stringsAsFactors = F)
+
+aic_vals_fmagna =
+  aic_vals_fmagna %>% left_join(model_matches, by = c("model" = "fitnames"))
+
+aic_vals_ptenuis =
+  aic_vals_ptenuis %>% left_join(model_matches, by = c("model" = "fitnames"))
+
+```
+
+### *F. magna*
+
+Among the models fit to the *F. magna* data, the best-supported model was the
+global model, followed by the second-best model with a delta-wAIC value of 
+`r (aic_vals_fmagna$waic %>% diff)[1] %>% round(2)`.
+
+
+```{r fmagnawaic}
+
+kable(x = aic_vals_fmagna %>% select(pubnames, waic), format = 'latex', booktabs = T, digits = 2, col.names = c("Model Name", "wAIC"))
+
+```
+
+### *P. tenuis*
+
+Among the models fit to the *P. tenuis* data, the best-supported model was the
+reduced 'two-scale spatial model', which had only easting, northing, and the 
+Gaussian process error model. The next best performing model followed with a 
+delta-wAIC value of `r (aic_vals_ptenuis$waic %>% diff)[1] %>% round(2)`.
+
+```{r ptenuiswaic}
+
+kable(x = aic_vals_ptenuis %>% select(pubnames, waic), format = 'latex', booktabs = T, digits = 2, col.names = c("Model Name", "wAIC"))
+
+```
+
+### Fixed effects parameter estimates
+
+Most parameters either covered 0
+
+\begin{figure}[H]
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\includegraphics[height=343px]{../DiseaseAnalysis/images/parplot_fmagna.pdf}
+\caption{\textit{F. magna} model parameter estimates.}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\includegraphics[height=400px]{../DiseaseAnalysis/images/parplot_ptenuis.pdf}
+\caption{\textit{P. tenuis} model parameter estimates.}
+\end{subfigure}
+\caption{\label{fig:parsplots}Displayed are the mode and 95\% credible interval for coefficients of fixed effects. See Appendix A for exact values.}
+\end{figure}
 
 
 ## Bayesian model checks
