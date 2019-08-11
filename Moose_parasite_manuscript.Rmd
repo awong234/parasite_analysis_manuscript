@@ -140,13 +140,29 @@ larger survey investigating the population size of moose in the park. The moose
 study surveyed triangular transects approximately 3 km long, selected by cluster
 random sampling. The clustering design of the transects were optimized for a
 spatial capture-recapture survey, including 3 transects per cluster separated by
-approximately 2-4 km. **INSERT FIGURE FOR MOOSE TRANSECTS**
+approximately 2-4 km.
+
+
+\begin{figure}[H]
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\includegraphics[height=500px]{img/sitePlot.png}
+\caption{Transect locations within the Adirondack Park for the 2016 survey.}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\includegraphics[height=500px]{img/sitePlot2017.png}
+\caption{Transect locations within the Adirondack Park for the 2017 survey.}
+\end{subfigure}
+\caption{\label{fig:sites}Transect locations within the Adirondack Park for the 2017 survey. Each dot represents the location of one transect, and each cluster of transects is bounded by a box. The inlaid plot indicates the extent of the Adirondack Park relative to the state of New York.}
+\end{figure}
+
 
 In 2018, a single-observer distance sampling protocol was implemented to
 quantify deer fecal group abundance in addition to measuring parasite intensity.
 Along each moose transects, 6 distance sampling transects each 100m long were
 spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total
-of **N** transects were sampled in 2018. At the specified start point, field
+of 150 transects were sampled in 2018. At the specified start point, field
 technicians extended a 100m tape to serve as the center line, and made
 observations along its length. Any number of scat pellets were considered to
 constitute a fecal group, and the approximate number was recorded. When a fecal
