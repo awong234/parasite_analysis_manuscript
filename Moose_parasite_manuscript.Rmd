@@ -280,8 +280,61 @@ and we assessed this by the geomorphon tool in QGIS, assessed at a resolution of
 maximized the variation in the geomorphon classification distribution relative
 to our sample locations.
 
+### INLA settings
 
 #### Priors
+
+We used default priors set by INLA for the covariate coefficients; that is:
+
+$$
+\beta_p \sim \text{Normal}(0, 0.001)
+$$
+
+where the second arguemnt of the Normal distribution is specified on the
+*precision* scale.
+
+The priors for the Matern covariance parameters were specified using INLA's
+penalized complexity prior construction for the range parameter $\rho$ and
+marginal variance $\sigma$. 
+
+#### Mesh
+
+A mesh is required to fit Gaussian random effect models under the INLA
+framework. The tool `meshbuilder` was used to visually select settings that
+fulfilled the following criteria (see Figure \ref{fig:boundaries):
+
+* Relatively fine mesh resolution (< 1km) in the vicinity of sampled data
+* Relatively low mesh resolution far from sampled data (>5km)
+
+
+```{r loadmesh, message=F, include = F}
+load('../DiseaseAnalysis/model_outputs/adk_mesh.Rdata')
+adkbound = rgdal::readOGR(dsn = '../../GIS/adkParkPoly/adkParkPoly.shp')
+load('../DiseaseAnalysis/data_no_na.Rdata')
+```
+
+```{r plotmesh, cache = T, fig.cap="\\label{fig:boundaries}Boundary line of the Adirondack Park, as well as the mesh constructed for INLA.", fig.pos = "H", fig.height=3.5}
+coords = data.frame(adkbound@polygons[[1]]@Polygons[[1]]@coords)
+colnames(coords) = c('x','y')
+
+ggplot() + 
+  ggmeshcust(adk_mesh) + 
+  geom_path(data = coords, aes(x = x, y = y, color = 'Adirondack boundary'), size = 1.3) + 
+  geom_point(data = data, aes(x = Easting_real, y = Northing_real, shape = 'datapoint')) + 
+  scale_colour_manual(name = 'Boundaries', 
+                      values = c('Adirondack boundary'='blue', 
+                                 'interior'           ='red'),
+                      labels = c('Adirondack Boundary', 'Interior (fine) mesh boundary')) + 
+  scale_shape_manual(name = "Sampled data", values = 1, labels = "Sampled data") +
+  guides(shape = guide_legend(title = "Points")) + 
+  coord_equal() + 
+  theme_bw() + theme(
+    panel.grid = element_blank(),
+    axis.title = element_blank()
+  )
+
+```
+
 
 ### Model Specifications
 
