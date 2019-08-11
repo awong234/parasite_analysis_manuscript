@@ -346,7 +346,6 @@ variables for both *F. magna* and *P. tenuis*.
 \caption{\label{tab:models} Model specifications and their covariates}
 \centering
 \begin{tabular}[H]{ll}
-\hiderowcolors
 \toprule
 Model & Formula \\
 \midrule
