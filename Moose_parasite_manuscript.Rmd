@@ -51,10 +51,10 @@ of fecal pellets contained L1 *P. tenuis* larvae. We attempted to quantify the
 geospatial distribution of parasite infection using landscape variables such as
 habitat, geomorphon structure, elevation, and spatial trend, but goodness-of-fit
 tests indicated poor fit of the model structures we evaluated, whether assessed
-as continuous intensity of infection (Poisson, negative binomial, zero-inflated
-Poisson), or binary infection status (binomial). We conclude that the data are
-not extensive enough to quantify relationships between parasite infection in
-white-tailed deer fecal pellets and geospatial effects.
+as continuous intensity of infection (Poisson, negative binomial), or binary
+infection status (binomial). We conclude that the data are not extensive enough
+to quantify relationships between parasite infection in white-tailed deer fecal
+pellets and geospatial effects.
 
 # Introduction
 
