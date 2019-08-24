@@ -144,29 +144,37 @@ approximately 2-4 km.
 
 
 \begin{figure}[H]
-\begin{subfigure}[b]{0.5\textwidth}
+\begin{subfigure}[t]{0.5\textwidth}
 \centering
-\includegraphics[height=500px]{img/sitePlot.png}
+\includegraphics[height=300px]{img/sitePlot.png}
 \caption{Transect locations within the Adirondack Park for the 2016 survey.}
 \end{subfigure}
-\begin{subfigure}[b]{0.5\textwidth}
+\begin{subfigure}[t]{0.5\textwidth}
 \centering
-\includegraphics[height=500px]{img/sitePlot2017.png}
+\includegraphics[height=300px]{img/sitePlot2017.png}
 \caption{Transect locations within the Adirondack Park for the 2017 survey.}
 \end{subfigure}
-\caption{\label{fig:sites}Transect locations within the Adirondack Park for the 2017 survey. Each dot represents the location of one transect, and each cluster of transects is bounded by a box. The inlaid plot indicates the extent of the Adirondack Park relative to the state of New York.}
+
+\hspace*{0.25\textwidth}
+\begin{subfigure}[t]{0.5\textwidth}
+\centering
+\includegraphics[height=300px]{img/deer_transect_ex.png}
+\caption{\label{fig:deertsect} Example of a parent 'moose' transect (red) approximately 3 km in length. It contains six child 'deer' transects (turquoise) that are each 100m in length and separated by 200m at a minimum.}
+\end{subfigure}
+\caption{\label{fig:sites}Transect locations within the Adirondack Park each year of surveys. In figures (a) and (b), each dot represents the location of one transect, and each cluster of transects is bounded by a box. The inlaid plot indicates the extent of the Adirondack Park relative to the state of New York. Figure (c) depicts the typical transect design.}
 \end{figure}
 
 
-In 2018, a single-observer distance sampling protocol was implemented to
-quantify deer fecal group abundance in addition to measuring parasite intensity.
-Along each moose transects, 6 distance sampling transects each 100m long were
-spaced 200m apart from each other. **INSERT FIGURE FOR DEER TRANSECTS** A total
-of 150 transects were sampled in 2018. At the specified start point, field
-technicians extended a 100m tape to serve as the center line, and made
-observations along its length. Any number of scat pellets were considered to
-constitute a fecal group, and the approximate number was recorded. When a fecal
-group was detected, its distance perpendicular from the center line, and
+In 2018, a single-observer distance sampling protocol was implemented intended
+to quantify deer fecal group abundance in addition to measuring parasite
+intensity. Along each moose transect, 6 distance sampling transects each 100m
+long were spaced 200m apart from each other (Figure \ref{fig:deertsect}). 
+
+A total of 150 such sub-transects were sampled in 2018. At the specified start
+point, field technicians extended a 100m tape to serve as the center line, and
+made observations along its length. Any number of scat pellets were considered
+to constitute a fecal group, and the approximate number was recorded. When a
+fecal group was detected, its distance perpendicular from the center line, and
 parallel along the center line was recorded. The perpendicular distance is the
 focal variable of distance sampling, but the parallel distance provided highly
 precise location coordinates of the scats -- because the start point of the
