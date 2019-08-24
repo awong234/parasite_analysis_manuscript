@@ -239,19 +239,20 @@ $\Sigma$. The covariance function used is the Matern; with $\nu = \alpha - d/2$,
 and $\alpha = 2; d = 2$:
 
 \[
-\text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
+\text{cov}[\Psi(s), \Psi(s')] = \sigma^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
 \]
 
-where $\tau, \kappa$ are variance and range scaling parameters, respectively,
-$\sigma_{\Psi}^2 = 1/(4\pi\kappa^2\tau^2)$ is the marginal variance, and
-$\mathcal{K}_1$ is the modified Bessel function of the second kind and order 1
-(See @Lindgren2015 for the specific representation and estimation of the spatial
-random effects within INLA). We selected this error model to account for the
-fact that the spatially clustered sampling is likely to obtain multiple samples
-from the same individuals, inducing local spatial autocorrelation. While
-empirical variograms do not demonstrate autocorrelation at any distance for *F.
-magna* response values, there exists observed autocorrelation for *P. tenuis* at
-the scale of approximately 1200 m.
+where $\kappa$ is the Matern spatial scale parameter such that $\kappa =
+\sqrt{8\nu}/\rho$. The marginal variance is $\sigma^2 = 1/(4\pi\kappa^2\tau^2)$
+, where $\tau$ is the precision. $\mathcal{K}_1$ is the
+modified Bessel function of the second kind and order 1 (@Lindgren2015).
+
+We selected this error model to account for the fact that the spatially
+clustered sampling is likely to obtain multiple samples from the same
+individuals, inducing local spatial autocorrelation. While empirical variograms
+do not suggest autocorrelation at any distance for *F. magna* response values,
+there exists observed autocorrelation for *P. tenuis* at the scale of
+approximately 1200 m.
 
 Additionally, we assessed the fit of models treating the response as a binary
 random variable modeled under the binomial distribution and zero-inflated
