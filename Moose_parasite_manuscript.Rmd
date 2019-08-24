@@ -192,10 +192,8 @@ The fecal samples were analyzed by the Cornell Animal Health and Diagnostic
 Center using several methods. For *F. magna*, Flukefinder, a modified Baermann
 technique, and fecal quantitative flotation were used. For *P. tenuis*, the
 modified Baermann, and fecal quantitative flotation methods were implemented.
-After 2016, the performant method for *F. magna* was determined to be
-Flukefinder, and for *P. tenuis* the performant method was the modified Baermann
-technique. This was assessed by **HOW? ASK KRYSTEN**, and validated post-hoc to
-have the greatest detection probability by an occupancy analysis.
+After 2016, the diagnostic method for *F. magna* used was Flukefinder, and for
+*P. tenuis*, the modified Baermann technique.
 
 ### Flukefinder
 
