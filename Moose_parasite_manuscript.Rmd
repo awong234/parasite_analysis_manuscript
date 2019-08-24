@@ -229,7 +229,8 @@ y_i \sim \text{Poisson}(\mu_i) \\
 Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
 the mean function modeled dependent upon spatial covariates $x_j(s)$, and
 $\Psi_1(s)$ is a Gaussian process with mean 0 and covariance matrix
-$\Sigma$. The covariance function used is the Matern:
+$\Sigma$. The covariance function used is the Matern; with $\nu = \alpha - d/2$,
+and $\alpha = 2; d = 2$:
 
 \[
 \text{cov}[\Psi(s), \Psi(s')] = \sigma_{\Psi}^2 \  \kappa ||s' - s|| \ \mathcal{K}_1(\kappa ||s' - s||)
@@ -239,14 +240,17 @@ where $\tau, \kappa$ are variance and range scaling parameters, respectively,
 $\sigma_{\Psi}^2 = 1/(4\pi\kappa^2\tau^2)$ is the marginal variance, and
 $\mathcal{K}_1$ is the modified Bessel function of the second kind and order 1
 (See @Lindgren2015 for the specific representation and estimation of the spatial
-random effects within INLA). The spatial random field is optional and we test
-models with and without it to assess support for modeling unstructured spatial
-dependence.
+random effects within INLA). We selected this error model to account for the
+fact that the spatially clustered sampling is likely to obtain multiple samples
+from the same individuals, inducing local spatial autocorrelation. While
+empirical variograms do not demonstrate autocorrelation at any distance for *F.
+magna* response values, there exists observed autocorrelation for *P. tenuis* at
+the scale of approximately 1200 m.
 
 Additionally, we assessed the fit of models treating the response as a binary
-random variable modeled under the binomial distribution and zero-inflated binomial
-distribution, with the same model of spatial dependence instead using a
-different link function.
+random variable modeled under the binomial distribution and zero-inflated
+binomial distribution, with the same model of spatial dependence instead using
+the appropriate link function.
 
 #### Covariates on parasite intensity
 
