@@ -304,23 +304,23 @@ and marginal standard deviation $\sigma_0$. The joint density of the prior is:
 \begin{equation}
 \begin{gathered}
 p(\rho, \sigma_0) = \frac{(d * R * S)}{2} \rho^{-1 - \frac{d}{2}} \exp(-R \rho^{\frac{-d}{2}}) \exp(-S \sigma_0) \\
-R = -\log(\alpha_1)\rho_0^{\frac{d}{2}} \\
-S = -\frac{\log(\alpha_2)}{\sigma_0}
+R = -\log(p_\rho)\rho_0^{\frac{d}{2}} \\
+S = -\frac{\log(p_\sigma)}{\sigma_0}
 \end{gathered}
 \end{equation}
 
-Critically, $\alpha_1$ and $\alpha_2$ are defined such that:
+Critically, $p_\rho$ and $p_\sigma$ are defined such that:
 
 $$
 \begin{gathered}
-\alpha_1 = P(\rho < \rho_0) \\
-\alpha_2 = P(\sigma > \sigma_0)
+p_\rho = P(\rho < \rho_0) \\
+p_\sigma = P(\sigma > \sigma_0)
 \end{gathered}
 $$
 
 In so doing, the prior specification can be defined on intuitive scales, setting
 a lower and upper limit for $\rho$ and $\sigma_0$, respectively. We selected
-$\rho_0 = 100$ (meters) and $\sigma_0 = 1$, and $\alpha_1 = \alpha_2 = 0.01$
+$\rho_0 = 100$ (meters) and $\sigma_0 = 1$, and $p_\rho = p_\sigma = 0.01$
 reasoning that spatial autocorrelation < 100m is indistinguishable from white
 noise, and the marginal standard deviation would not be much larger than the
 sample standard deviation.
