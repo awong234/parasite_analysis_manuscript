@@ -637,6 +637,33 @@ indicate a lack of fit, having a high density of values approaching unity.
 
 # Discussion
 
+The endoparasites *F. magna* and *P. tenuis* are moderately prevalent in the
+Adirondack white-tailed deer population, having infected approximately
+four-in-ten of the deer pellet groups assessed for both parasites. This should
+not be interpreted as an assessment of the white-tailed deer population, as it
+is possible that we resampled individuals' pellet groups; nevertheless, a
+relatively abundant population of infected pellet groups will present a higher
+risk of infection to gastropod intermediate hosts, and so there is no
+
+The best-performing model fit to the *F. magna* data indicate a small negative
+effect of UTM Northing, and each model including Snow as a covariate demonstrate
+a
+
+However, our analysis of factors explaining the spatial distribution of the
+parasites are inconclusive due to poor model fit. Two goodness-of-fit measures
+indicate that all model constructions have poor fit, particularly for response
+values far from zero. This indicates two things: (a) the selection of the random
+field parameters are not contributing to the lack of fit (as the models without
+local spatial effects exhibit the same fit statistics), and (b) the model does
+not explain the parasite presence very well at all.
+
+While the negative binomial model presents a tremendous improvement over the
+Poisson, the overall lack of fit indicates that a different analytical framework
+is required. The poor fit persisted even when the data were reduced to
+presence/absence binary information. The spatial covariates included are likely
+not adequate in explaining the variation, and the data are likely too sparse to
+present a signal over as large a space as the Adirondacks.
+
 # References
 
 <div id=refs></div>
