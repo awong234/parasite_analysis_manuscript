@@ -263,7 +263,7 @@ date, measured in inches. Precipitation affects the survival of *P. tenuis* and
 respectively), and so it is anticipated that deer would be more likely to be
 infected in areas of higher rainfall [@Pybus2001]. Additionally, gastropod
 activity is inhibited by drought, and so higher rainfall would suggest higher
-risk of infection due to a higher availability of gastropods to be ingested in
+risk of infection due to a greater availability of gastropods to be ingested in
 the case of *P. tenuis* [@Lankester2018]. We used the spatially interpolated
 PRISM dataset for precipitation [@PRISM]. We considered another derived variable
 for snowfall accumulation in the snowfall season prior to the data collection
