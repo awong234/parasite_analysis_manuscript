@@ -4,7 +4,7 @@ output:
     keep_tex: true
 bibliography: moose_parasites.bib
 header-includes:
-  - \usepackage{float}
+- \usepackage{float}
   - \usepackage{subcaption}
 ---
 
@@ -670,30 +670,78 @@ indicate a lack of fit, having a high density of values approaching unity.
 
 The endoparasites *F. magna* and *P. tenuis* are moderately prevalent in the
 Adirondack white-tailed deer population, having infected approximately
-four-in-ten of the deer pellet groups assessed for both parasites. This should
-not be interpreted as an assessment of the white-tailed deer population, as it
-is possible that we resampled individuals' pellet groups; nevertheless, a
-relatively abundant population of infected pellet groups will present a higher
-risk of infection to gastropod intermediate hosts, and so there is no
+four-in-ten of the deer pellet groups assessed. This is not a direct assessment
+of the prevalence in white-tailed deer, as it is possible that we sampled
+multiple pellet groups from the same animal; nevertheless, we anticipate
+that a relatively greater abundance of infected pellet groups will present a
+higher risk of infection to gastropod intermediate hosts, though we were unable
+to quantify the relative spatial risk of infection.
 
-The best-performing model fit to the *F. magna* data indicate a small negative
-effect of UTM Northing, and each model including Snow as a covariate demonstrate
-a
+All *F. magna* models including prior-year snowfall and prior-year precipitation
+as a covariate demonstrate a negative relationship with snowfall and a positive
+relationship with rainfall, and were among the effects estimated with greatest
+precision. This is supports the hypothesis that survival of the parasites in the
+infective stage is a crucial factor in the eventual discharge of more infective
+stage parasite organisms in the next year.
 
-However, our analysis of factors explaining the spatial distribution of the
-parasites are inconclusive due to poor model fit. Two goodness-of-fit measures
-indicate that all model constructions have poor fit, particularly for response
-values far from zero. This indicates two things: (a) the selection of the random
-field parameters are not contributing to the lack of fit (as the models without
-local spatial effects exhibit the same fit statistics), and (b) the model does
-not explain the parasite presence very well at all.
+The *P. tenuis* models did not display as strong a relationship with
+meteorological factors, indicating that perhaps the liver fluke are more
+sensitive to weather than are *P. tenuis* infective stages. Since *F. magna*
+requires additional stages of development in aquatic environments (and thus
+depending upon distinct species of intermediate hosts), these results are
+sensible; particularly a greater reliance upon rainfall. Brainworm larvae
+instead were observed to have a negative relationship with elevation, which may
+indicate an underlying relationship with habitat, as the habitat transitions to
+upland coniferous habitat with increasing altitude.
 
-While the negative binomial model presents a tremendous improvement over the
-Poisson, the overall lack of fit indicates that a different analytical framework
-is required. The poor fit persisted even when the data were reduced to
-presence/absence binary information. The spatial covariates included are likely
-not adequate in explaining the variation, and the data are likely too sparse to
-present a signal over as large a space as the Adirondacks.
+The geomorphon landscape structures were included in the model to quantify
+whether localized basins where water might collect may be important in
+determining parasite intensity. Our hypothesis was that lower areas (valleys,
+depressions) would contribute to greater success of the parasites due to
+formation of ephemeral water bodies. However, the valley geomorphon exhibited a
+small *negative* effect, or no effect at all. Instead, areas with sloping
+characteristics and no flat components (ridge, spur, and hollow) demonstrated
+positive effects. This suggests that perhaps ephemeral water bodies are not
+measurably important factors in the distribution of the parasites, and is in
+contrast to results of previous research [@Vanderwaal2014].
+
+However, it is more likely that our analysis suffered from a lack of data to
+adequately characterize the relationships. The majority of the data (42.8%, $n =
+266$) occurred on slope gemorphons, followed by spur (24.9% $n = 155$), hollow
+(10.9% $n = 68$), and ridge (10.3%, $n = 64$); in contrast, only 45 observations
+(7.2%) occurred in valley and 24 observations in any other geomorphon type
+(3.9%).
+
+Additionally, our analysis of factors explaining the spatial distribution of the
+parasites are likely inconclusive due to poor model fit. Two goodness-of-fit
+measures indicate that all model constructions have poor fit, particularly for
+response values greater than zero. This indicates two things: (a) the selection
+of the random field parameters are not contributing to the lack of fit (as the
+models without local spatial effects exhibit the same fit statistics), and (b)
+the model does not explain the parasite presence very well at all. While the
+negative binomial model presents a tremendous improvement over the Poisson (with
+WAIC value improving by an order of magnitude), the overall lack of fit
+indicates that a different analytical framework is required.
+
+The poor fit persisted when the data were reduced to presence/absence binary
+information. While the conditional predictive ordinate (CPO) diagnostic plots
+displayed a low density of small values, a marked improvement, it measures the
+probability of observing $y_i$ under a model fit to $y_{-i}$ (all data but
+observation $i$). Because there are only two possible outcomes (and thus only
+one way to be wrong) the CPO values may not be as sensitive to poor fit as the
+probability integral transform (PIT). Under good model fit, PIT values should be
+uniformly distributed; however, we observed an increasing density of values as
+they approached 1, and were certainly not uniformly distributed as Figure
+\ref{fig:gofplot3} demonstrates.
+
+We conclude that the spatial covariates included are likely not adequate in
+explaining the variation in the data, and the number of observations is too
+sparse to detect a signal over as large a space as the Adirondacks. Future
+research should devote a more dedicated sampling effort than we could allocate,
+expanding the spatial extent of sampling and using a sampling design specific to
+this research question. For instance, sample locations could be selected to
+maximize covariate variation, where we could not do so due to the constraints of
+sampling opportunistically within another research context. 
 
 # References
 
