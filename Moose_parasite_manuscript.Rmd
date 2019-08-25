@@ -197,11 +197,15 @@ After 2016, the diagnostic method for *F. magna* used was Flukefinder, and for
 
 ### Flukefinder
 
-*Needs to be updated by relevant members; Flukefinder methodology not in shared folder*
+*Needs to be updated by relevant members*
 
 ### Modified Baermann
 
+*Needs to be updated by relevant members*
+
 ### Fecal flotation
+
+*Needs to be updated by relevant members*
 
 ## Statistical Models
 
