@@ -77,7 +77,7 @@ migration of larvae through the central nervous system that often end in death
 [@Pybus2001; @Lankester2010]. *Parelaphastrongylus tenuis* is acquired via
 ingestion of gastropod intermediate hosts, in which *P. tenuis* larvae have molt
 from L1 to L2, and L3 stages over approximately 4 weeks. Gastropods become
-infected by ingesting the mucuosal layer surrounding white-tailed deer fecal
+infected by ingesting the mucosal layer surrounding white-tailed deer fecal
 pellets, or from the soil over which the L1-stage larvae have been washed by
 precipitation.
 
@@ -87,7 +87,7 @@ due to migration of immature flukes or fibrous encapsulation of adult flukes
 gastropod intermediate hosts. A major distinction is that the gastropod hosts
 are aquatic snails (typically within the genus *Lymnaea*) that become infected
 by free-swimming miracidia introduced to the water as eggs in white-tailed deer
-feces [@Pybus2001; @Peterson2013; @Malcicka2015]. The meracidia develop within
+feces [@Pybus2001; @Peterson2013; @Malcicka2015]. The miracidia develop within
 the snail, ultimately generating cercariae that encyst as metacercariae on
 aquatic vegetation. Because moose select aquatic vegetation as a significant
 proportion of their diet, *F. magna* metacercariae are presumably commonly
@@ -97,11 +97,11 @@ In the Adirondacks of New York, moose populations have increased since their
 extirpation in the late 19th century, but their populations have not seen the
 same growth during the 20th century as their New England counterparts
 [@Timmermann2017]. Recent estimates of moose population size indicate that there
-are approximately 600 to 1000 moose in the Adirondacks [@Wong2019], a range
+are approximately 600 to 1000 moose in the Adirondacks [@Wong2018], a range
 which does not indicate substantial change from previous assertions of
 population size [@Hickey2008]. Factors that may be limiting the population are
 not established, but the focal parasites *P. tenuis* and *F. magna* have been
-observed in moose necropsies with moderate frequency (REF Schuler and/or DEC).
+observed in moose necropsies with moderate frequency.
 
 The New York State Department of Environmental Conservation (DEC) has been
 gathering information on moose health from incidental mortalities (n = 117)
@@ -227,14 +227,14 @@ observations are thus modeled as follows:
 \begin{equation}
 \begin{gathered}
 y_i \sim \text{Poisson}(\mu_i) \\
-\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \Psi_1(s_i) \\
-\Psi_1(s_i) \sim GP(0, \Sigma)
+\log(\mu_i) = \beta_0 + \beta_1*x_1(s_i) + ... + \beta_p*x_p(s_i) + \Psi(s_i) \\
+\Psi(s_i) \sim GP(0, \Sigma)
 \end{gathered}
 \end{equation}
 
 Where, $y_i$ represent the parasites observed per fecal group sample, $\mu_i$ is
 the mean function modeled dependent upon spatial covariates $x_j(s)$, and
-$\Psi_1(s)$ is a Gaussian process with mean 0 and covariance matrix
+$\Psi(s)$ is a Gaussian process with mean 0 and covariance matrix
 $\Sigma$. The covariance function used is the Matern; with $\nu = \alpha - d/2$,
 and $\alpha = 2; d = 2$:
 
@@ -243,9 +243,9 @@ and $\alpha = 2; d = 2$:
 \]
 
 where $\kappa$ is the Matern spatial scale parameter such that $\kappa =
-\sqrt{8\nu}/\rho$. The marginal variance is $\sigma^2 = 1/(4\pi\kappa^2\tau^2)$
-, where $\tau$ is the precision. $\mathcal{K}_1$ is the
-modified Bessel function of the second kind and order 1 (@Lindgren2015).
+\sqrt{8\nu}/\rho$. The marginal variance is $\sigma^2 = 1/(4\pi\kappa^2\tau^2)$, 
+where $\tau$ is the precision. $\mathcal{K}_1$ is the
+modified Bessel function of the second kind and order 1 [@Lindgren2015].
 
 We selected this error model to account for the fact that the spatially
 clustered sampling is likely to obtain multiple samples from the same
@@ -274,22 +274,23 @@ risk of infection due to a greater availability of gastropods to be ingested in
 the case of *P. tenuis* [@Lankester2018]. We used the spatially interpolated
 PRISM dataset for precipitation [@PRISM]. We considered another derived variable
 for snowfall accumulation in the snowfall season prior to the data collection
-date (that is, from September until April prior to the date of survey). Similar
-to precipitation, we anticipate that areas that experience low snowfall in the
-year prior to the survey date will exhibit a higher parasite intensity due to
-increased parasite survival, and increased activity of gastropod intermediate
-hosts. The National Weather Service's National Snowfall Analysis dataset was
-used to obtain spatially-referenced snowfall amounts.
+date (that is, from September until April in the year prior to the date of
+survey). Similar to precipitation, we anticipate that areas that experience low
+snowfall in the year prior to the survey date will exhibit a higher parasite
+intensity due to increased parasite survival, and increased activity of
+gastropod intermediate hosts. The National Weather Service's National Snowfall
+Analysis [@NWS] dataset was used to obtain spatially-referenced snowfall
+amounts.
 
 Local terrain basins where water may collect were considered as a potentially
 important effect particularly for *F. magna*, as the life cycle of the parasite
 has a period during which metacercariae encyst on aquatic vegetation and once
 matured infect aquatic snail intermediate hosts. We hypothesized that intensity
 of infection for *F. magna* will be greater in basins than on slopes or peaks,
-and we assessed this by the geomorphon tool in QGIS, assessed at a resolution of
-40km (1600 squared-kilometers). This resolution was selected because it
-maximized the variation in the geomorphon classification distribution relative
-to our sample locations.
+and we assessed this by the geomorphon tool in QGIS, assessed at a range of 40km
+(1600 squared-kilometers). This range was selected because it maximized the
+variation in the geomorphon classification distribution relative to our sample
+locations.
 
 ### INLA settings
 
@@ -468,7 +469,7 @@ This information criterion is a measure of *relative* out-of-sample predictive
 accuracy, and lower WAIC values indicate greater relative performance.
 
 Model results for the Poisson response distribution are not included in the
-table because all AIC values are an order of magnitude larger than those of the
+table because all WAIC values are an order of magnitude larger than those of the
 negative-binomial response distribution.
 
 ```{r aicvals, warning = F, include = F}
@@ -544,8 +545,8 @@ Most parameters either covered 0
 
 ## Bayesian model checks
 
-We checked the fit of the models using Bayesian predictive checks made available
-by the `INLA` package; specifically the conditional predictive ordinate (CPO)
+We checked the fit of the models using Bayesian predictive checks available
+in the `INLA` package; specifically the conditional predictive ordinate (CPO)
 and the probability integral transform (PIT).
 
 ### Conditional predictive ordinate
@@ -557,8 +558,8 @@ $$
 \text{CPO}_i = \pi(y_i^{\text{obs}} | y_{-i})
 $$
 
-and describes the probability of observing of a particular observation when all
-of the data but observation $i$ are used to fit to the model. Very small values
+and describes the probability of a particular observation $i$ when all of the
+data but observation $i$ are used to fit to the model. Very small values
 indicate that the model is not likely to have predicted a particular observation
 and thus that model is not expected to generalize well.
 
@@ -606,13 +607,13 @@ may not be well predicted by the model.
 \includegraphics[height=400px]{../DiseaseAnalysis/images/cpo_by_response_fmagna.pdf}
 \caption{\textit{F. magna} model goodness-of-fit statistics.}
 \end{subfigure}
-
+\\
 \begin{subfigure}[b]{0.9\textwidth}
 \centering
 \includegraphics[height=400px]{../DiseaseAnalysis/images/cpo_by_response_ptenuis.pdf}
 \caption{\textit{P. tenuis} model goodness-of-fit statistics.}
 \end{subfigure}
-\caption{\label{fig:gofplot2}Displayed are the conditional predictive ordinate and probbability transform values across values of the response variable. The goodness-of-fit values are relatively poor when the response is not zero.}
+\caption{\label{fig:gofplot2}Displayed are the conditional predictive ordinate and probability transform values across values of the response variable. The goodness-of-fit values are relatively poor when the response is not zero.}
 \end{figure}
 
 By visual assessment, the PIT values are not uniformly distributed (Figure
@@ -638,7 +639,7 @@ indicate a lack of fit, having a high density of values approaching unity.
 \includegraphics[height=400px]{../DiseaseAnalysis/images/logreg_full_pit.png}
 \caption{}
 \end{subfigure}
-\caption{\label{fig:gofplot2}Displayed are the (a) conditional predictive ordinate and (b) probability transform values.}
+\caption{\label{fig:gofplot3}Displayed are the (a) conditional predictive ordinate and (b) probability transform values quantile-quantile plot for the global model fit to the \textit{F. magna} data. The properties of these goodness-of-fit tests are identical for the \textit{P. tenuis} data.}
 \end{figure}
 
 
