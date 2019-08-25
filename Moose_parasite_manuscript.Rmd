@@ -502,35 +502,50 @@ aic_vals_ptenuis =
 
 ```
 
-### *F. magna*
-
 Among the models fit to the *F. magna* data, the best-supported model was the
 global model, followed by the second-best model with a delta-WAIC value of 
 `r (aic_vals_fmagna$waic %>% diff)[1] %>% round(2)`.
 
 
-```{r fmagnawaic}
+```{r fmagnawaic, echo = F, results = 'asis'}
+t1 = kable(x = aic_vals_fmagna %>% select(pubnames, waic), format = 'latex', booktabs = T, digits = 2, col.names = c("Model Name", "WAIC"))
+t2 = kable(x = aic_vals_ptenuis %>% select(pubnames, waic), format = 'latex', booktabs = T, digits = 2, col.names = c("Model Name", "WAIC"))
 
-kable(x = aic_vals_fmagna %>% select(pubnames, waic), format = 'latex', booktabs = T, digits = 2, col.names = c("Model Name", "WAIC"))
-
+cat(c("\\begin{table}[!htb]
+    \\begin{minipage}{.5\\linewidth}
+      \\caption{\\textit{F. magna} model WAIC values}
+      \\centering",
+        t1,
+    "\\end{minipage}%
+    \\begin{minipage}{.5\\linewidth}
+      \\centering
+        \\caption{\\textit{P. tenuis} model WAIC values.}",
+        t2,
+    "\\end{minipage} 
+\\end{table}"
+)) 
 ```
-
-### *P. tenuis*
 
 Among the models fit to the *P. tenuis* data, the best-supported model was the
 reduced 'two-scale spatial model', which had only easting, northing, and the 
 Gaussian process error model. The next best performing model followed with a 
 delta-WAIC value of `r (aic_vals_ptenuis$waic %>% diff)[1] %>% round(2)`.
 
-```{r ptenuiswaic}
+All (and particularly the best-supported) models for the *F. magna* data suggest
+positive relationships with rainfall and negative relationships with snowfall,
+in agreement with our hypotheses (Figure \ref{fig:parsplots}). For the *P.
+tenuis* data, there were no comparable relationships with snowfall and
+precipitation. Elevation presented a strong negative correlation in all models
+in which it was included, including the model with the highest support.
 
-kable(x = aic_vals_ptenuis %>% select(pubnames, waic), format = 'latex', booktabs = T, digits = 2, col.names = c("Model Name", "WAIC"))
-
-```
-
-### Fixed effects parameter estimates
-
-Most parameters either covered 0
+While most of the geomorphon predictor coefficient estimates had wide posterior
+distributions overlapping 0 or were estimated to be nearly 0, the geomorphon
+types that represent sloping features with no flat areas (spur, ridge, hollow)
+displayed positive effects for both species. Our hypothesis suggested that
+valleys would exhibit a positive relationship with parasite intensity, but the
+effects were estimated to be nearly zero with wide posterior distributions.
+Indeed, ridges (the opposite of valleys) presented a slightly positive
+association with parasite intensity for both species.
 
 \begin{figure}[H]
 \begin{subfigure}[b]{0.5\textwidth}
@@ -546,6 +561,10 @@ Most parameters either covered 0
 \caption{\label{fig:parsplots}Displayed are the mode and 95\% credible interval for coefficients of fixed effects. See Appendix A for exact values.}
 \end{figure}
 
+The scale parameter for the random effect varied greatly between models, but the
+best-supported model for *F. magna* suggest a range of autocorrelation on the
+order of one kilometer (95% CI 174m - 1690m). For *P. tenuis*, the range
+parameter varied from 2871 to 19903 with a mean value of 8705 in the best-fitting model.
 
 ## Bayesian model checks
 
