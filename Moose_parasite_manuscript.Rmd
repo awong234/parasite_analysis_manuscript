@@ -332,10 +332,10 @@ $$
 
 In so doing, the prior specification can be defined on intuitive scales, setting
 a lower and upper limit for $\rho$ and $\sigma_0$, respectively. We selected
-$\rho_0 = 100$ (meters) and $\sigma_0 = 1$, and $p_\rho = p_\sigma = 0.01$
-reasoning that spatial autocorrelation < 100m is indistinguishable from white
-noise, and the marginal standard deviation would not be much larger than the
-sample standard deviation.
+$\rho_0 = 100$ (meters) and $\sigma_0 = 35$, and $p_\rho = p_\sigma = 0.01$
+reasoning that at our scale of inference, spatial autocorrelation < 100m is not
+substantially different from $i.i.d.$ normal error, and the marginal standard
+deviation would not be much larger than the sample standard deviation.
 
 
 #### Mesh
@@ -345,7 +345,7 @@ framework. The `meshbuilder` tool provided by package `INLA` was used to
 visually select settings that fulfilled the following criteria (see Figure
 \ref{fig:boundaries}):
 
-* Relatively fine mesh resolution (< 1km) in the vicinity of sampled data
+* Relatively fine mesh resolution (< 2km edges, ~ 1 km between vertices) in the vicinity of sampled data
 * Relatively low mesh resolution far from sampled data (>5km)
 
 
